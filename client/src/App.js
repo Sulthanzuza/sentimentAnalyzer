@@ -68,7 +68,7 @@ function App() {
       </header>
 
       <main className="analyzer-container">
-        <p>Paste your instagream or youtube URL to analyze its vibe.</p>
+        <p>Paste your instagram or youtube URL to analyze its vibe.</p>
 
         <input
           type="text"
