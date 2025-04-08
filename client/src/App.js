@@ -33,9 +33,9 @@ function App() {
   
     let endpoint = '';
     if (postUrl.includes('youtube.com') || postUrl.includes('youtu.be')) {
-      endpoint = 'https://saai-engine.onrender.com/insta/ytcomment';
+      endpoint = 'https://sa-server-arub.onrender.com/insta/ytcomment';
     } else if (postUrl.includes('instagram.com')) {
-      endpoint = 'https://saai-engine.onrender.com/insta/scrape';
+      endpoint = 'https://sa-server-arub.onrender.com/insta/scrape';
     } else {
       alert(' Unsupported URL. Please enter a valid Instagram or YouTube post link.');
       setLoading(false);

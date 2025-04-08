@@ -7,12 +7,25 @@ const instagramRoutes = require('./routes/routes');
 dotenv.config();
 const app = express();
 
+const allowedOrigins = [
+  'https://sentiment-analyzer-bpkq.vercel.app/',
+  'https://sentiment-analyzer-bpkq-sulthanshas-projects.vercel.app/',
+  'https://sentiment-analyzer-bpkq-git-main-sulthanshas-projects.vercel.app/'
+];
+
 app.use(cors({
-  origin: 'https://sentiment-analyzer-bpkq.vercel.app', 
-  methods: ['GET', 'POST'], 
-  credentials: true,        
+  origin: function (origin, callback) {
+    if (!origin || allowedOrigins.includes(origin)) {
+      callback(null, true);
+    } else {
+      callback(new Error('Not allowed by CORS'));
+    }
+  },
+  credentials: true,
 }));
 app.use(express.json());
+
+app.options('*', cors());
 
 app.get('/',(req,res)=>{
   res.send("api running")
