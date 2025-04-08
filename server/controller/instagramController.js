@@ -44,7 +44,7 @@ exports.scrapeInstagram = async (req, res) => {
     
     const sentimentResults = await Promise.all(
       comments.map(async (comment) => {
-        const aiRes = await axios.post('http://localhost:7000/analyze-sentiment/', null, {
+        const aiRes = await axios.post('https://saai-engine.onrender.com/analyze-sentiment/', null, {
           params: { text: comment },
         });
         
